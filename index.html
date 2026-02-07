@@ -11,7 +11,7 @@
         margin: 0;
         font-family: 'Great Vibes', cursive;
         overflow-x: hidden;
-        background: #f8c1c1; /* elegant reddish Valentine vibe */
+        background: #f8c1c1;
     }
 
     /* Page 1 */
@@ -62,7 +62,7 @@
     /* floating hearts & bunny */
     .heart, .bunny {
         position: absolute;
-        font-size: 40px; /* bigger emojis */
+        font-size: 50px;
         animation: floatUp 6s linear infinite;
     }
 
@@ -84,27 +84,30 @@
         width: 100%;
         position: relative;
         overflow: hidden;
-        padding: 40px;
+        display: flex;
+        align-items: center; /* center vertically */
+        justify-content: center; /* center horizontally */
+        padding: 60px;
         box-sizing: border-box;
     }
 
     /* Letter */
     #letter {
         position: relative;
-        max-width: 60%; /* narrow container so photos don't cover text */
-        margin: 0 auto;
-        background: transparent; /* remove white box */
-        padding: 20px;
+        width: 55%;        /* narrow so photos don’t overlap */
+        padding: 25px 30px;
         font-size: 1.1em;
         line-height: 1.5em;
         color: #3b0000;
+        text-align: center;
         z-index: 2;
+        background: rgba(255, 255, 255, 0.0); /* fully transparent */
     }
 
     /* floating hearts on Page 2 */
     .heart2 {
         position: absolute;
-        font-size: 30px;
+        font-size: 40px;
         animation: floatUp2 5s linear infinite;
     }
 
@@ -123,8 +126,18 @@
         z-index: 3;
     }
 
-    #photo1 { top: 20px; left: 20px; transform: rotate(-10deg);}
-    #photo2 { bottom: 20px; right: 20px; transform: rotate(10deg);}
+    #photo1 { 
+        top: 20px; 
+        left: 20px; 
+        width: 100px;   /* slightly smaller so text never overlaps */
+        transform: rotate(-10deg);
+    }
+    #photo2 { 
+        bottom: 20px; 
+        right: 20px; 
+        width: 100px;
+        transform: rotate(10deg);
+    }
 </style>
 </head>
 <body>
@@ -187,7 +200,7 @@
 
     yes.addEventListener('click', ()=>{
         page1.style.display = 'none';
-        page2.style.display = 'block';
+        page2.style.display = 'flex';  // flex for centering text
     });
 
     // playful no button
@@ -202,4 +215,3 @@
 
 </body>
 </html>
-    
