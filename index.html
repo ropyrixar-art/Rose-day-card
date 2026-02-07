@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Rose Day</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body {
+    margin:0;
+    font-family: 'Cormorant Garamond', serif;
+    overflow-x:hidden;
+}
+
+/* ---------------- PAGE 1 ---------------- */
+#page1 {
+    background: linear-gradient(135deg, #ff9999, #cc6666);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Sticker text at top */
+.sticker {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 40px;
+    color: #fff;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+    z-index: 2;
+}
+
+/* Main heading in center */
+h1 {
+    font-size: 2.4em;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    z-index: 2;
+}
+
+.btn {
+    padding: 15px 30px;
+    font-size: 1.3em;
+    margin: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+
+#yes { background-color: #ff5a5a; color:white; }
+#no { background-color: #fff; color: #ff5a5a; border: 2px solid #ff5a5a; }
+
+/* Floating hearts and cute emojis */
+.heart, .bunny {
+    position: absolute;
+    font-size: 60px;
+    animation: floatUp 6s linear infinite;
+}
+
+@keyframes floatUp {
+    0% {transform: translateY(100vh) rotate(0deg);}
+    100% {transform: translateY(-50px) rotate(360deg);}
+}
+
+/* ---------------- PAGE 2 ---------------- */
+#page2 {
+    display: none;
+    background: url('vintage_paper.jpg') no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+/* Letter box */
+#letter {
+    position: relative;
+    max-width: 90%;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.7);
+    padding: 25px;
+    border-radius: 12px;
+    font-size: 1.2em;
+    line-height: 1.6em;
+    color: #3b0000;
+    z-index: 2;
+    text-align: center;
+}
+
+/* Floating hearts Page 2 */
+.heart2 {
+    position: absolute;
+    font-size: 40px;
+    animation: floatUp2 5s linear infinite;
+}
+
+@keyframes floatUp2 {
+    0% {transform: translateY(100vh) rotate(0deg);}
+    100% {transform: translateY(-50px) rotate(360deg);}
+}
+
+/* Photos */
+.photo {
+    width: 150px;
+    border: 3px solid #fff;
+    border-radius: 12px;
+    box-shadow: 4px 4px 15px rgba(0,0,0,0.3);
+    position: absolute;
+    z-index:3;
+}
+
+#photo1 { top: 40px; left: 40px; transform: rotate(-10deg);}
+#photo2 { bottom: 40px; right: 40px; transform: rotate(10deg);}
+</style>
+</head>
+<body>
+
+<!-- ---------- PAGE 1 ---------- -->
+<div id="page1">
+    <div class="sticker">💌 Valentine Week 💌</div>
+    <h1>Happy Rose Day, my first love 🌹</h1>
+    <button class="btn" id="yes">Yes</button>
+    <button class="btn" id="no">No</button>
+
+    <!-- floating hearts -->
+    <div class="heart" style="left:10%;animation-delay:0s;">❤️</div>
+    <div class="heart" style="left:30%;animation-delay:2s;">💖</div>
+    <div class="heart" style="left:50%;animation-delay:1s;">💗</div>
+    <div class="heart" style="left:70%;animation-delay:3s;">💘</div>
+
+    <!-- cute bunny/teddy -->
+    <div class="bunny" style="bottom:20px;left:20%;animation-delay:1s;">🐰</div>
+    <div class="bunny" style="bottom:20px;left:70%;animation-delay:2.5s;">🧸</div>
+</div>
+
+<!-- ---------- PAGE 2 ---------- -->
+<div id="page2">
+    <!-- two photos -->
+    <img src="photo1.jpg" class="photo" id="photo1">
+    <img src="photo2.jpg" class="photo" id="photo2">
+
+    <!-- floating hearts -->
+    <div class="heart2" style="left:5%;animation-delay:0s;">❤️</div>
+    <div class="heart2" style="left:25%;animation-delay:2s;">💖</div>
+    <div class="heart2" style="left:50%;animation-delay:1s;">💗</div>
+    <div class="heart2" style="left:75%;animation-delay:3s;">💘</div>
+
+    <!-- letter text -->
+    <div id="letter">
+        Today is Rose Day<br>
+        I didn’t even know until I saw your repost<br>
+        And I smiled<br>
+        I used to think this whole Valentine week was cringe<br>
+        Funny how that changes when there’s someone you actually want to share it with<br>
+        I don’t have a bouquet<br>
+        I don’t have grand promises<br>
+        But if love is a flower I’d rather care for it than pluck it<br>
+        I wanted to give you a rose and say all of this<br>
+        But maybe the rose is just a prop<br>
+        A symbol, not the act<br>
+        So let’s set it aside<br>
+        Because love and the care it carries<br>
+        Is in the promises we choose to keep<br>
+        Happy Rose Day my dear<br>
+        Not just today but in the quiet days too<br>
+        Yours, Aadi ❤️
+    </div>
+</div>
+
+<script>
+const page1 = document.getElementById('page1');
+const page2 = document.getElementById('page2');
+const yes = document.getElementById('yes');
+const no = document.getElementById('no');
+
+// switch pages
+yes.addEventListener('click', ()=>{
+    page1.style.display = 'none';
+    page2.style.display = 'block';
+});
+
+// playful no button
+no.addEventListener('mouseover', ()=>{
+    const x = Math.random() * (window.innerWidth - no.offsetWidth);
+    const y = Math.random() * (window.innerHeight - no.offsetHeight);
+    no.style.position = 'absolute';
+    no.style.left = x + 'px';
+    no.style.top = y + 'px';
+});
+</script>
+
+</body>
+</html>
