@@ -4,161 +4,159 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Happy Rose Day</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
 <style>
-body {
-    margin:0;
-    font-family: 'Cormorant Garamond', serif;
-    overflow-x:hidden;
-}
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
-/* ---------------- PAGE 1 ---------------- */
-#page1 {
-    background: linear-gradient(135deg, #ff9999, #cc6666);
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-}
+    body {
+        margin: 0;
+        font-family: 'Great Vibes', cursive;
+        overflow-x: hidden;
+        background: #f8c1c1; /* elegant reddish Valentine vibe */
+    }
 
-/* Sticker text at top */
-.sticker {
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 40px;
-    color: #fff;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
-    z-index: 2;
-}
+    /* Page 1 */
+    #page1 {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        position: relative;
+        overflow: hidden;
+        padding-top: 50px;
+        text-align: center;
+    }
 
-/* Main heading in center */
-h1 {
-    font-size: 2.4em;
-    text-align: center;
-    color: #fff;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-    z-index: 2;
-}
+    #valentineSticker {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
 
-.btn {
-    padding: 15px 30px;
-    font-size: 1.3em;
-    margin: 10px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    position: relative;
-    z-index: 2;
-}
+    h1 {
+        font-size: 2.2em;
+        margin-bottom: 40px;
+        color: #800000;
+    }
 
-#yes { background-color: #ff5a5a; color:white; }
-#no { background-color: #fff; color: #ff5a5a; border: 2px solid #ff5a5a; }
+    .btn {
+        padding: 15px 30px;
+        font-size: 1.2em;
+        margin: 10px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        position: relative;
+    }
 
-/* Floating hearts and cute emojis */
-.heart, .bunny {
-    position: absolute;
-    font-size: 60px;
-    animation: floatUp 6s linear infinite;
-}
+    #yes {
+        background-color: #ff5a5a;
+        color: white;
+    }
 
-@keyframes floatUp {
-    0% {transform: translateY(100vh) rotate(0deg);}
-    100% {transform: translateY(-50px) rotate(360deg);}
-}
+    #no {
+        background-color: #fff;
+        color: #ff5a5a;
+        border: 2px solid #ff5a5a;
+    }
 
-/* ---------------- PAGE 2 ---------------- */
-#page2 {
-    display: none;
-    background: url('vintage_paper.jpg') no-repeat center center;
-    background-size: cover;
-    height: 100vh;
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-    padding: 40px;
-    box-sizing: border-box;
-}
+    /* floating hearts & bunny */
+    .heart, .bunny {
+        position: absolute;
+        font-size: 40px; /* bigger emojis */
+        animation: floatUp 6s linear infinite;
+    }
 
-/* Letter box */
-#letter {
-    position: relative;
-    max-width: 90%;
-    margin: 0 auto;
-    background: rgba(255,255,255,0.7);
-    padding: 25px;
-    border-radius: 12px;
-    font-size: 1.2em;
-    line-height: 1.6em;
-    color: #3b0000;
-    z-index: 2;
-    text-align: center;
-}
+    @keyframes floatUp {
+        0% {transform: translateY(100vh) rotate(0deg);}
+        100% {transform: translateY(-50px) rotate(360deg);}
+    }
 
-/* Floating hearts Page 2 */
-.heart2 {
-    position: absolute;
-    font-size: 40px;
-    animation: floatUp2 5s linear infinite;
-}
+    .bunny {
+        font-size: 60px;
+    }
 
-@keyframes floatUp2 {
-    0% {transform: translateY(100vh) rotate(0deg);}
-    100% {transform: translateY(-50px) rotate(360deg);}
-}
+    /* Page 2 */
+    #page2 {
+        display: none;
+        background: url('vintage_paper.jpg') no-repeat center center;
+        background-size: cover;
+        height: 100vh;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        padding: 40px;
+        box-sizing: border-box;
+    }
 
-/* Photos */
-.photo {
-    width: 150px;
-    border: 3px solid #fff;
-    border-radius: 12px;
-    box-shadow: 4px 4px 15px rgba(0,0,0,0.3);
-    position: absolute;
-    z-index:3;
-}
+    /* Letter */
+    #letter {
+        position: relative;
+        max-width: 60%; /* narrow container so photos don't cover text */
+        margin: 0 auto;
+        background: transparent; /* remove white box */
+        padding: 20px;
+        font-size: 1.1em;
+        line-height: 1.5em;
+        color: #3b0000;
+        z-index: 2;
+    }
 
-#photo1 { top: 40px; left: 40px; transform: rotate(-10deg);}
-#photo2 { bottom: 40px; right: 40px; transform: rotate(10deg);}
+    /* floating hearts on Page 2 */
+    .heart2 {
+        position: absolute;
+        font-size: 30px;
+        animation: floatUp2 5s linear infinite;
+    }
+
+    @keyframes floatUp2 {
+        0% {transform: translateY(100vh) rotate(0deg);}
+        100% {transform: translateY(-50px) rotate(360deg);}
+    }
+
+    /* Photos */
+    .photo {
+        width: 120px;
+        border: 3px solid #fff;
+        border-radius: 10px;
+        box-shadow: 3px 3px 12px rgba(0,0,0,0.3);
+        position: absolute;
+        z-index: 3;
+    }
+
+    #photo1 { top: 20px; left: 20px; transform: rotate(-10deg);}
+    #photo2 { bottom: 20px; right: 20px; transform: rotate(10deg);}
 </style>
 </head>
 <body>
 
-<!-- ---------- PAGE 1 ---------- -->
+<!-- Page 1 -->
 <div id="page1">
-    <div class="sticker">💌 Valentine Week 💌</div>
+    <div id="valentineSticker">💌 Valentine Week 💌</div>
     <h1>Happy Rose Day, my first love 🌹</h1>
     <button class="btn" id="yes">Yes</button>
     <button class="btn" id="no">No</button>
 
-    <!-- floating hearts -->
+    <!-- floating hearts & bunny -->
     <div class="heart" style="left:10%;animation-delay:0s;">❤️</div>
-    <div class="heart" style="left:30%;animation-delay:2s;">💖</div>
-    <div class="heart" style="left:50%;animation-delay:1s;">💗</div>
+    <div class="heart" style="left:30%;animation-delay:1s;">💖</div>
+    <div class="heart" style="left:50%;animation-delay:2s;">💗</div>
     <div class="heart" style="left:70%;animation-delay:3s;">💘</div>
-
-    <!-- cute bunny/teddy -->
-    <div class="bunny" style="bottom:20px;left:20%;animation-delay:1s;">🐰</div>
-    <div class="bunny" style="bottom:20px;left:70%;animation-delay:2.5s;">🧸</div>
+    <div class="bunny" style="bottom:10px; left:80%;animation-delay:2s;">🐰</div>
 </div>
 
-<!-- ---------- PAGE 2 ---------- -->
+<!-- Page 2 -->
 <div id="page2">
-    <!-- two photos -->
+    <!-- Photos -->
     <img src="photo1.jpg" class="photo" id="photo1">
     <img src="photo2.jpg" class="photo" id="photo2">
 
     <!-- floating hearts -->
     <div class="heart2" style="left:5%;animation-delay:0s;">❤️</div>
-    <div class="heart2" style="left:25%;animation-delay:2s;">💖</div>
-    <div class="heart2" style="left:50%;animation-delay:1s;">💗</div>
+    <div class="heart2" style="left:25%;animation-delay:1s;">💖</div>
+    <div class="heart2" style="left:50%;animation-delay:2s;">💗</div>
     <div class="heart2" style="left:75%;animation-delay:3s;">💘</div>
 
-    <!-- letter text -->
+    <!-- Letter text -->
     <div id="letter">
         Today is Rose Day<br>
         I didn’t even know until I saw your repost<br>
@@ -181,26 +179,27 @@ h1 {
 </div>
 
 <script>
-const page1 = document.getElementById('page1');
-const page2 = document.getElementById('page2');
-const yes = document.getElementById('yes');
-const no = document.getElementById('no');
+    // Page switching
+    const page1 = document.getElementById('page1');
+    const page2 = document.getElementById('page2');
+    const yes = document.getElementById('yes');
+    const no = document.getElementById('no');
 
-// switch pages
-yes.addEventListener('click', ()=>{
-    page1.style.display = 'none';
-    page2.style.display = 'block';
-});
+    yes.addEventListener('click', ()=>{
+        page1.style.display = 'none';
+        page2.style.display = 'block';
+    });
 
-// playful no button
-no.addEventListener('mouseover', ()=>{
-    const x = Math.random() * (window.innerWidth - no.offsetWidth);
-    const y = Math.random() * (window.innerHeight - no.offsetHeight);
-    no.style.position = 'absolute';
-    no.style.left = x + 'px';
-    no.style.top = y + 'px';
-});
+    // playful no button
+    no.addEventListener('mouseover', ()=>{
+        const x = Math.random() * (window.innerWidth - no.offsetWidth);
+        const y = Math.random() * (window.innerHeight - no.offsetHeight);
+        no.style.position = 'absolute';
+        no.style.left = x + 'px';
+        no.style.top = y + 'px';
+    });
 </script>
 
 </body>
 </html>
+    
